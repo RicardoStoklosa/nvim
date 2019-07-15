@@ -17,3 +17,4 @@ set hidden
 set number
 set relativenumber
 
+map <C-n> :NERDTreeToggle<CR>
