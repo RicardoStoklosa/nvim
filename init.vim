@@ -18,3 +18,8 @@ set number
 set relativenumber
 
 map <C-n> :NERDTreeToggle<CR>
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
