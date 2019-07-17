@@ -11,6 +11,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " Theme
@@ -23,6 +25,8 @@ scriptencoding utf-8
 set hidden
 set number
 set relativenumber
+
+nnoremap ; :
 
 " Remaps
 " NERDTREE
