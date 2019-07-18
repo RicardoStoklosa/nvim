@@ -8,11 +8,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 " Plug 'lifepillar/vim-mucomplete'
 Plug 'Shougo/deoplete.nvim'
-Plug 'lifepillar/vim-mucomplete'
+Plug 'ncm2/ncm2'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
+Plug 'grvcoelho/vim-javascript-snippets'
 call plug#end()
 
 " Theme
@@ -27,6 +28,8 @@ set number
 set relativenumber
 
 nnoremap ; :
+nnoremap <C-s> :w<CR>
+inoremap ii <ESC>
 
 " Remaps
 " NERDTREE
