@@ -13,7 +13,10 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'airblade/vim-gitgutter'
+    "Plug 'airblade/vim-gitgutter'
+    Plug 'sickill/vim-monokai'
+    Plug 'mhinz/vim-startify'
+    Plug 'altercation/vim-colors-solarized'
     "Syntax
     Plug 'vim-syntastic/syntastic'
     Plug 'sheerun/vim-polyglot'
@@ -24,7 +27,7 @@ call plug#begin()
     " Plug 'jiangmiao/auto-pairs' testando:
     Plug 'Raimondi/delimitMate'
 
-    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-surround' "Testar Sandwich
     Plug 'kien/ctrlp.vim'
 
     " Autocomplete
@@ -35,14 +38,20 @@ call plug#begin()
     Plug 'xolox/vim-misc'
 
     Plug 'vim-scripts/ReplaceWithRegister'
+    Plug 'vim-scripts/dbext.vim'
+    "Motion
+    Plug 'easymotion/vim-easymotion'
+    Plug 'yuttie/comfortable-motion.vim'
+    Plug 'lilydjwg/colorizer'
 call plug#end()
 
 " Theme
-colorscheme gruvbox
+colorscheme monokai
 set background=dark
 
 " Basic config
 scriptencoding utf-8
+set clipboard=unnamedplus
 
 "Tab Size
 set tabstop=4
@@ -71,6 +80,11 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 " erro termo <c-p>
 " let g:ctrlp_map=<c-p>
+
+" Spell Check
+" set spell
+set spelllang=pt
+
 
 " coc
 let path = $HOME."/.config/coc/extensions/node_modules/"
@@ -122,7 +136,7 @@ endfunction
 " vim-better-space
 
 let g:strip_whitespace_on_save=1
-
+let g:better_whitespace_enabled=0
 let g:strip_whitespace_confirm=0
 
 " notes
@@ -130,3 +144,12 @@ let g:notes_directories = ['~/Notes']
 
 map <leader>d I#<esc>:r !date "+\%d/\%m" <cr> kJo<TAB><esc>
 let g:notes_tab_indents = 0
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" PostGres
+let g:dbext_default_profile_psql = 'type=PGSQL:host=localhost:port=5432:dbname=ban:user=postgres'
+let g:dbext_default_profile = 'psql'
+
+" confortable motion
+nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
