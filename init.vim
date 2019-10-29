@@ -24,8 +24,8 @@ call plug#begin()
     Plug 'scrooloose/nerdcommenter'
     Plug 'ntpeters/vim-better-whitespace'
 
-    " Plug 'jiangmiao/auto-pairs' testando:
-    Plug 'Raimondi/delimitMate'
+    Plug 'jiangmiao/auto-pairs'
+    " Plug 'Raimondi/delimitMate'
 
     Plug 'tpope/vim-surround' "Testar Sandwich
     Plug 'kien/ctrlp.vim'
@@ -43,14 +43,13 @@ call plug#begin()
     Plug 'easymotion/vim-easymotion'
     Plug 'yuttie/comfortable-motion.vim'
     Plug 'lilydjwg/colorizer'
+    Plug 'ap/vim-buftabline'
 call plug#end()
 
 " Theme
 colorscheme monokai
 set background=dark
 
-" Basic config
-scriptencoding utf-8
 set clipboard=unnamedplus
 
 "Tab Size
@@ -71,7 +70,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 " nerdcommenter
 filetype plugin on
-let g:NERDSpaceDelims = 1
+" let g:NERDSpaceDelims = 1
 
 " Para deixar de ser troxa
 noremap <Up> <NOP>
@@ -153,3 +152,8 @@ let g:dbext_default_profile = 'psql'
 " confortable motion
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+
+set autochdir
+nnoremap <C-Left> :bprev<CR>
+nnoremap <C-Right> :bnext<CR>
+nnoremap <C-S-p> :CtrlPBuffer
