@@ -8,5 +8,7 @@
               "cacheDirectory": "/tmp/ccls"
           }
         }
-    }
+    },
+    "explorer.quitOnOpen":true,
+    "explorer.width":30
 }
