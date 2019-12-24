@@ -28,8 +28,13 @@ call plug#begin()
     Plug 'yuttie/comfortable-motion.vim'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-buftabline'
-call plug#end()
+    Plug 'nikvdp/neomux'
+    Plug 'simeji/winresizer'
+    Plug 'neomake/neomake'
+    Plug 'kassio/neoterm'
 
+call plug#end()
+map <F8> :make!<CR>
 " THEME
 colorscheme night-owl
 let g:lightline = { 'colorscheme': 'nightowl' }
@@ -120,3 +125,4 @@ nnoremap <C-Right> :bnext<CR>
 
 " AUTO-PAIRS
 let g:AutoPairsMultilineClose=0
+call neomake#configure#automake('w')
