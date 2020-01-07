@@ -42,6 +42,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
+call plug#end()
+map <F8> :make!<CR>
 " THEME
 set termguicolors
 colorscheme nord
@@ -79,5 +81,3 @@ nnoremap <C-Right> :bnext<CR>
 
 " AUTO-PAIRS
 let g:AutoPairsMultilineClose=0
-
-let g:deoplete#enable_at_startup = 1
