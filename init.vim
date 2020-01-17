@@ -17,16 +17,13 @@ call plug#begin()
     Plug 'terryma/vim-multiple-cursors'
 
     " Autocomplete
-    Plug 'lifepillar/vim-mucomplete'
-    Plug 'xavierd/clang_complete'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-scripts/ReplaceWithRegister'
-    Plug 'davidhalter/jedi-vim'
 
     Plug 'kien/ctrlp.vim'
     Plug 'Raimondi/delimitMate'
     Plug 'benmills/vimux'
     Plug 'preservim/nerdtree'
-    Plug 'ternjs/tern_for_vim' , { 'do' : 'npm install' }
 
     "Motion
     Plug 'yuttie/comfortable-motion.vim'
@@ -34,15 +31,6 @@ call plug#begin()
 
     Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
-" MU
-"
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-set noinfercase
-set completeopt-=preview
-set completeopt+=menuone,noselect
-set shortmess+=c
-let g:mucomplete#enable_auto_at_startup = 1
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -103,3 +91,30 @@ nnoremap <C-Right> :bnext<CR>
 
 " AUTO-PAIRS
 let g:AutoPairsMultilineClose=0
+
+" TAB KEY FOR COC
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
