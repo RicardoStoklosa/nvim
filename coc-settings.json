@@ -29,11 +29,6 @@
                 }
             }
         },
-        "efm": {
-            "command": "efm-langserver",
-            "args": [],
-            "filetypes": ["vim", "eruby", "markdown"]
-        },
         "flow": {
             "command": "flow",
             "args": ["lsp"],

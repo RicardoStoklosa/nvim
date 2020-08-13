@@ -11,8 +11,7 @@ call plug#begin()
     Plug 'scrooloose/nerdcommenter'
     Plug 'ntpeters/vim-better-whitespace'
 
-    "Plug 'jiangmiao/auto-pairs'
-    Plug 'machakann/vim-sandwich'
+    Plug 'jiangmiao/auto-pairs'
 
     Plug 'terryma/vim-multiple-cursors'
 
@@ -21,7 +20,6 @@ call plug#begin()
     Plug 'vim-scripts/ReplaceWithRegister'
 
     Plug 'kien/ctrlp.vim'
-    Plug 'Raimondi/delimitMate'
     Plug 'benmills/vimux'
     Plug 'preservim/nerdtree'
 
@@ -53,6 +51,7 @@ let g:ctrlp_custom_ignore = {
 
 map <F8> :VimuxPromptCommand("")<CR>
 map <F9> :VimuxRunLastCommand<CR>
+map <F10> :make
 
 " THEME
 set termguicolors
@@ -118,3 +117,4 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+
